@@ -24,13 +24,23 @@ function AddDataSpace({location}){
   );
 };
 
-function ShowDataSpace({city}){
+function ShowDataSpace({city, temp, feelslike, clouds }){
 
   return(
     <div className="ShowDataSpace">
 
       <p className="CityName">
         {city.toUpperCase()}
+      </p>
+      <p className="temp">
+        {temp} °C
+      </p>
+      <p className="feelslike">
+        Feels Like: 
+        {feelslike} °C
+      </p>
+      <p className="clouds">
+        {clouds} 
       </p>
     </div>
   );
@@ -44,6 +54,9 @@ function ShowDataSpace({city}){
 export default function App(){
 
   const [city , setCity] = useState("");
+  const [temp, setTemp] = useState("");
+  const [feelslike , setFeelslike] = useState("")
+  const [clouds , setClouds] = useState("");
 
   function location(newcity){
     setCity(newcity);
@@ -58,24 +71,37 @@ export default function App(){
   async function getWeather(){
     console.log("1");
     try{
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`)
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}&units=metric`)
       if(!response.ok){
         throw new Error("Could not fetch");
       }
       
       const data = await response.json();
       console.log(data);
+      DATA(data);
+      
 
     }
     catch(error){
       console.error(error);
     }
   }
+  function DATA(data){
+    setTemp(data.main.temp);
+    setClouds(data.wind.speed);
+    setFeelslike(data.main.feels_like)
+    console.log(clouds);
+  }
 
   return(
     <>
     <AddDataSpace location={location} />
-    < ShowDataSpace city={city} />
+    < ShowDataSpace 
+      city={city}
+       temp={temp}
+       feelslike={feelslike}
+       clouds={clouds}
+       />
     </>
      );
 };
