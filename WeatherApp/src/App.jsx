@@ -49,9 +49,28 @@ export default function App(){
     setCity(newcity);
 
   }
-  useEffect( () => {console.log(city);}, [city])
+  useEffect( () => {
+    getWeather()
+    console.log(city);
+  }, [city])
+  const APIkey = "23b9ab18dad411ca4fcce6299e5b3bf2";
 
+  async function getWeather(){
+    console.log("1");
+    try{
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`)
+      if(!response.ok){
+        throw new Error("Could not fetch");
+      }
+      
+      const data = await response.json();
+      console.log(data);
 
+    }
+    catch(error){
+      console.error(error);
+    }
+  }
 
   return(
     <>
