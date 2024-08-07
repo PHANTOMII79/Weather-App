@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 
-function AddDataSpace({location}){
+function AddDataSpace({location, SearchedState}){
   const [city , setCity] = useState("");
   const Submit = () => {
     location(city);
     setCity("");
+    SearchedState();
   }
 
   return(
@@ -53,7 +54,7 @@ function ShowDataSpace({city, temp, feelslike, clouds }){
 
 
 export default function App(){
-
+  const [isSearched , setIsSearched] = useState(false);
   const [city , setCity] = useState("");
   const [temp, setTemp] = useState("");
   const [feelslike , setFeelslike] = useState("")
@@ -88,6 +89,10 @@ export default function App(){
       console.error(error);
     }
   }
+  function SearchedState(){
+    setIsSearched(true);
+
+  }
   function DATA(data){
     setTemp(data.main.temp);
     setClouds(data.wind.speed);
@@ -97,13 +102,22 @@ export default function App(){
 
   return(
     <>
-    <AddDataSpace location={location} />
-    < ShowDataSpace 
-      city={city}
-       temp={temp}
-       feelslike={feelslike}
-       clouds={clouds}
-       />
+      <div className="App">
+          {!isSearched && (
+            <AddDataSpace location={location} SearchedState={SearchedState} />
+            )
+          }
+          {isSearched && (
+                      < ShowDataSpace 
+                      city={city}
+                      temp={temp}
+                      feelslike={feelslike}
+                      clouds={clouds}
+                      />
+          )}
+        </div>    
     </>
+     
      );
+
 };
