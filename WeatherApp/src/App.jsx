@@ -33,7 +33,8 @@ function ShowDataSpace({city, temp, feelslike, clouds }){
         {city.toUpperCase()}
       </p>
       <p className="temp">
-        {temp} °C
+        {`${temp}°C`}
+        
       </p>
       <p className="feelslike">
         Feels Like: 
@@ -74,6 +75,7 @@ export default function App(){
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}&units=metric`)
       if(!response.ok){
         throw new Error("Could not fetch");
+        
       }
       
       const data = await response.json();
