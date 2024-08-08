@@ -7,7 +7,7 @@ export default function App(){
   const [city , setCity] = useState("");
   const [temp, setTemp] = useState("");
   const [feelslike , setFeelslike] = useState("")
-  const [clouds , setClouds] = useState("");
+  const [wind , setWind] = useState("");
 
   function location(newcity){
     setCity(newcity);
@@ -44,9 +44,9 @@ export default function App(){
   }
   function DATA(data){
     setTemp(data.main.temp);
-    setClouds(data.wind.speed);
+    setWind(data.wind.speed);
     setFeelslike(data.main.feels_like)
-    console.log(clouds);
+    console.log(wind);
   }
   
 
@@ -63,7 +63,7 @@ export default function App(){
               city={city}
               temp={temp}
               feelslike={feelslike}
-              clouds={clouds}
+              wind={wind}
           />
           
         </div>    

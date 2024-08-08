@@ -1,23 +1,22 @@
 import { useState, useEffect } from 'react'
  
-export default function ShowDataSpace({city, temp, feelslike, clouds , isSearched}){
+export default function ShowDataSpace({city, temp, feelslike, wind , isSearched}){
 
     return(
-      <div className="ShowDataSpace">
+      <div className={`ShowDataSpace ${isSearched ? 'Searched' : ''}`}>
   
         <p className="CityName">
           {city.toUpperCase()}
         </p>
         <p className="temp">
-          {`${temp}°C`}
+          {` 🌡${temp}°C`}
           
         </p>
         <p className="feelslike">
-          Feels Like: 
-          {feelslike} °C
+         <span> {feelslike} °C</span>Feels Like
         </p>
-        <p className="clouds">
-          {clouds} 
+        <p className="wind">
+          {wind} 
         </p>
       </div>
     );
