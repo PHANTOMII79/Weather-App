@@ -24,13 +24,15 @@ body{
     position: absolute;
     display: flex;
     height: min-content;
+    transition:  0.6s ease-out;
 }
 .AddDataSpace.Searched:hover{
     opacity: 1;
 }
 .AddDataSpace.Searched{
-    top:0;
+    transform: translateY(-20rem);
     opacity: 50%;
+    
     
     
     
@@ -60,7 +62,7 @@ body{
 
 
 .ShowDataSpace{
-    display: none;
+    display: block;
     background-color: bisque;
     width: 25rem;
     height: 30rem;
@@ -69,22 +71,23 @@ body{
     padding: 2rem;
     font-size: 2rem;
     line-height: 3em;
+    opacity: 0;
+    
 
 
     
 
 }
 .ShowDataSpace.Searched{
-    display: block;
-
-    
-
+    opacity: 1;
+    transition:  0.6s ease-out;
 }
 .CityName{
     text-align: center;
     color: #003366;
     font-weight:900;
-    font-size: 5rem;
+    font-size: clamp(2rem, 50%,5rem);
+    text-wrap: nowrap;
 
 }
 
@@ -106,6 +109,17 @@ span{
     color: rgb(48, 184, 104);
 }
 .wind{
+    text-align: center;
+    color: gray;
+    font-size: larger;
 
 }
+p{
+    transition:  0.3s ease-in-out;
+}
 
+p:hover{
+    transition:  0.3s ease-in-out;
+    transform: scale(1.1);
+    
+}

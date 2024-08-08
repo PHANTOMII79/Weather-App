@@ -39,14 +39,14 @@ export default function App(){
     }
   }
   function SearchedState(){
-    setIsSearched(true);
+    
 
   }
   function DATA(data){
     setTemp(data.main.temp);
     setWind(data.wind.speed);
     setFeelslike(data.main.feels_like)
-    console.log(wind);
+    setIsSearched(true);
   }
   
 

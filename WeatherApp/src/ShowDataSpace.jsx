@@ -16,7 +16,7 @@ export default function ShowDataSpace({city, temp, feelslike, wind , isSearched}
          <span> {feelslike} °C</span>Feels Like
         </p>
         <p className="wind">
-          {wind} 
+          {wind}🌬
         </p>
       </div>
     );
