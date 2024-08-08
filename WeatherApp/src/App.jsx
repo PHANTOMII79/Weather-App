@@ -1,57 +1,6 @@
 import { useState, useEffect } from 'react'
-
-function AddDataSpace({location, SearchedState}){
-  const [city , setCity] = useState("");
-  const Submit = () => {
-    location(city);
-    setCity("");
-    SearchedState();
-  }
-
-  return(
-    <div className="AddDataSpace">
-      <input type="text"
-       id="AddDataText"
-        placeholder='Write The city Here  🏙'
-        value={city}
-        onChange={(e) => setCity(e.target.value.toLowerCase())}
-        />
-        <button
-        id='SubmitDataText'
-        onClick={Submit}
-        >Get Weather</button>
-    </div>
-
-  );
-};
-
-function ShowDataSpace({city, temp, feelslike, clouds }){
-
-  return(
-    <div className="ShowDataSpace">
-
-      <p className="CityName">
-        {city.toUpperCase()}
-      </p>
-      <p className="temp">
-        {`${temp}°C`}
-        
-      </p>
-      <p className="feelslike">
-        Feels Like: 
-        {feelslike} °C
-      </p>
-      <p className="clouds">
-        {clouds} 
-      </p>
-    </div>
-  );
-};
-
-
-
-
-
+import AddDataSpace from './AddDataSpace';
+import ShowDataSpace from './ShowDataSpace';
 
 export default function App(){
   const [isSearched , setIsSearched] = useState(false);
@@ -99,22 +48,24 @@ export default function App(){
     setFeelslike(data.main.feels_like)
     console.log(clouds);
   }
+  
 
   return(
     <>
       <div className="App">
-          {!isSearched && (
-            <AddDataSpace location={location} SearchedState={SearchedState} />
-            )
-          }
-          {isSearched && (
-                      < ShowDataSpace 
-                      city={city}
-                      temp={temp}
-                      feelslike={feelslike}
-                      clouds={clouds}
-                      />
-          )}
+          <AddDataSpace
+              location={location}
+              SearchedState={SearchedState}
+              isSearched={isSearched}
+              />
+          < ShowDataSpace 
+              isSearched={isSearched}
+              city={city}
+              temp={temp}
+              feelslike={feelslike}
+              clouds={clouds}
+          />
+          
         </div>    
     </>
      

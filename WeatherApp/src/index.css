@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* outline: 1px dotted red; */
+    border: none;
+}
+body{
+    max-height: 100vhS;
+
+}
+
+.ShowDataSpace{
+
+    display: none;
+
+}
+
+
+
+
+
+.AddDataSpace{
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items:center;
+     
+
+}
+.AddDataSpace.Searched{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:start;
+
+}
