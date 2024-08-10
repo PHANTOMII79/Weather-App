@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import './InnerPage.css'
  
 export default function ShowDataSpace({city, temp, feelslike, wind , isSearched}){
 

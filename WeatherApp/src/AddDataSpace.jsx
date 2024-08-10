@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
+import './InnerPage.css'
 
 
-export default function AddDataSpace({location, SearchedState, isSearched}){
+export default function AddDataSpace({location, isSearched}){
     const [city , setCity] = useState("");
     const Submit = () => {
       location(city);
       setCity("");
-      SearchedState();
       console.log(isSearched);
     }
   
