@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import AddDataSpace from './AddDataSpace';
 import ShowDataSpace from './ShowDataSpace';
+import Login from './Login';
+import SignIn from './SignIn';
+
 
 export default function App(){
   const [isSearched , setIsSearched] = useState(false);
@@ -52,7 +55,15 @@ export default function App(){
 
   return(
     <>
-      <div className="App">
+
+      <div className="OuterPage">
+          <Login/>
+
+          <SignIn/>
+
+      </div>
+      
+      <div className="InnerPage">
           <AddDataSpace
               location={location}
               SearchedState={SearchedState}
