@@ -1,0 +1,37 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+input{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+button{
+    margin: 0;
+    padding: 0;
+    border: none;
+
+}
+.OutterPage{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(150, 100%, 90%, 0.772);
+    /* outline: 1px dotted red; */
+    border: none;
+    box-sizing: border-box;
+}
+
+.InnerPage{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(150, 100%, 90%, 0.772);
+    /* outline: 1px dotted red; */
+    border: none;
+    box-sizing: border-box;
+}

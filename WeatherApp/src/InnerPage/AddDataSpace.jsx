@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './InnerPage.css'
+import styles from'./InnerPage.module.css'
 
 
 export default function AddDataSpace({location, isSearched}){
@@ -11,15 +11,15 @@ export default function AddDataSpace({location, isSearched}){
     }
   
     return(
-      <div className={`AddDataSpace ${isSearched ? "Searched" : "" }`} >
+      <div className={`${styles.AddDataSpace} ${isSearched ? styles.Searched : '' }`} >
         <input type="text"
-         id="AddDataText"
+         id={styles.AddDataText}
           placeholder='Write The city Here  🏙'
           value={city}
           onChange={(e) => setCity(e.target.value.toLowerCase())}
           />
           <button
-          id='SubmitDataText'
+          id={styles.SubmitDataText}
           onClick={Submit}
           >🔍</button>
       </div>

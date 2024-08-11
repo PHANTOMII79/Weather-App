@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import AddDataSpace from './AddDataSpace';
-import ShowDataSpace from './ShowDataSpace';
-import Login from './Login';
-import SignIn from './SignIn';
+import AddDataSpace from './InnerPage/AddDataSpace';
+import ShowDataSpace from './InnerPage/ShowDataSpace';
+import Login from './OutterPage/Login';
+import SignIn from './OutterPage/SignIn';
 
 
 export default function App(){
@@ -12,7 +12,7 @@ export default function App(){
   const [feelslike , setFeelslike] = useState("")
   const [wind , setWind] = useState("");
   const [logState , setLogState] = useState(false);
-  const  [hadAccount , setHadAccount] =useState(true);
+  const  [hadAccount , setHadAccount] =useState(false);
 
 
   function IsLogged(state){
@@ -82,10 +82,14 @@ export default function App(){
               
             </div> 
       ) : (
-        <div className="OuterPage">
-        <Login/>
+        <div className="OutterPage">
+        <Login
+          hadAccount={hadAccount}
+        />
 
-        <SignIn/>
+        <SignIn
+          hadAccount={hadAccount}
+        />
 
          </div>
       )}

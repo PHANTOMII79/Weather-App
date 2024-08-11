@@ -1,0 +1,147 @@
+.Login{
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    width: 30rem;
+    height: 35rem;
+    background-color: hsla(180, 75%, 23%, 0.772);
+    color: #F0F0F0;
+    border-radius: 2rem;
+    padding: 1rem;
+
+}
+.Login h1{
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 1px 2px 3px   hsl(0, 0%, 10%);
+    padding-bottom: 3rem;
+}
+.AddLoginData{
+    display: flex;
+    flex-direction: column;
+    
+    border: none;
+    width: 70%;
+}
+.Login input{
+    background-color: hsla(0, 0%, 80%, 0.6);
+    color: #333333;
+    border-radius: 1rem;
+    padding-left: 1ch;
+    font-size: 1.5rem;
+    height: 3rem;
+    margin: 2px;
+    overflow: hidden;
+}
+.Login input:hover{
+    background-color: hsla(0, 0%, 80%, 0.9);
+
+}
+.Login input::placeholder{
+    font-size: 2rem;
+}
+.LogInButton{
+    font-size: 2rem;
+    padding: 0.5rem 3rem;
+    border-radius: 2rem;
+    background-color: greenyellow;
+    font-weight: 54;
+    color: #333333;
+}
+.LogInButton:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 3px hsl(0, 0%, 10%);
+    color: hsl(0, 0%, 10%);
+
+}
+.ForgotPassword{
+    color: #333333;
+}
+.ForgotPassword span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.DonthaveAccount{
+    color: #333333;
+}
+.DonthaveAccount span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.Login.No{
+    display: none;
+}
+/* ==================================================== */
+
+.SignIn{
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    width: 30rem;
+    height: 35rem;
+    background-color: hsla(180, 75%, 23%, 0.772);
+    color: #F0F0F0;
+    border-radius: 2rem;
+    padding: 1rem;
+
+}
+.SignIn h1{
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 1px 2px 3px   hsl(0, 0%, 10%);
+    padding-bottom: 3rem;
+}
+.AddSignInData{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    width: 70%;
+}
+.SignIn input{
+    background-color: hsla(0, 0%, 80%, 0.6);
+    color: #333333;
+    border-radius: 1rem;
+    padding-left: 1ch;
+    font-size: 1.5rem;
+    height: 3rem;
+    margin: 2px;
+    overflow: hidden;
+}
+.SignIn input:hover{
+    background-color: hsla(0, 0%, 80%, 0.9);
+
+}
+.SignIn input::placeholder{
+    font-size: 1.5rem;
+}
+.SignInButton{
+    font-size: 2rem;
+    padding: 0.5rem 3rem;
+    border-radius: 2rem;
+    background-color: greenyellow;
+    font-weight: 54;
+    color: #333333;
+}
+.SignInButton:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 3px hsl(0, 0%, 10%);
+    color: hsl(0, 0%, 10%);
+
+}
+
+.haveAccount{
+    color: #333333;
+}
+.haveAccount span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.SignIn.No{
+    display: none;
+}
