@@ -3,7 +3,7 @@ import styles from './OutterPage.module.css'
 
 
 
-export default function Login({hadAccount }){
+export default function Login({hadAccount , NoAccount }){
     const [password , setPassword] = useState('');
     const [username , setUsername] = useState('');
 
@@ -27,7 +27,7 @@ export default function Login({hadAccount }){
             </div>
             <button className={styles.LogInButton} onClick={""}> Log In </button>
             <p className={styles.ForgotPassword}> <span>Forgot Password?</span></p>
-            <p className={styles.DonthaveAccount}>  Don't Have An Account? <span>CLICK ME!</span></p>
+            <p className={styles.DonthaveAccount} onClick={() => NoAccount()}>  Don't Have An Account? <span>CLICK ME!</span></p>
 
 
 

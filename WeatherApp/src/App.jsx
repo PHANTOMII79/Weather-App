@@ -22,6 +22,10 @@ export default function App(){
     setHadAccount(false);
 
   }
+  function HaveAccount(){
+    setHadAccount(true);
+
+  }
   function location(newcity){
 
     setCity(newcity);
@@ -85,10 +89,12 @@ export default function App(){
         <div className="OutterPage">
         <Login
           hadAccount={hadAccount}
+          NoAccount={NoAccount}
         />
 
         <SignIn
           hadAccount={hadAccount}
+          HaveAccount={HaveAccount}
         />
 
          </div>
