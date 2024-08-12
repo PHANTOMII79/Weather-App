@@ -10,7 +10,7 @@ export default function SignIn({hadAccount , HaveAccount}){
 
 
     return(
-        <div className={`${styles.Login} ${ !hadAccount ? '' : styles.No}`}>
+        <div className={`${styles.SignIn} ${ !hadAccount ? '' : styles.No}`}>
             <h1> Sign In </h1>
             <div className={styles.AddSignInData}>
             <input type="text" 

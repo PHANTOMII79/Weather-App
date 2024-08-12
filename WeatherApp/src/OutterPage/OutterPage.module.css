@@ -10,9 +10,55 @@
     color: #F0F0F0;
     border-radius: 2rem;
     padding: 1rem;
-    transition: display 0.6s ease-in-out ;
+    animation: FadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+    
+}
+
+.Login.No{
+
+    animation: FadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    
+}
+@keyframes FadeOut {
+    from {
+        
+        transform: rotateY(0deg);
+        opacity: 1;
 
 
+    }
+
+    to {
+        display: none;
+        transform: rotateY(180deg);
+        opacity: 0;
+
+
+    }
+    
+}
+@keyframes FadeIn {
+    to {
+        display: flex;
+        transform: rotateY(0deg);
+        opacity: 1;
+
+
+    }
+
+    from {
+        display: none;
+        transform: rotateY(-180deg);
+        opacity: 0;
+
+
+    }
+    
 }
 .Login h1{
     text-align: center;
@@ -73,11 +119,6 @@
     text-decoration: underline;
 }
 
-
-.Login.No{
-    display: none;
-    transition: 0.6s ease-in-out 1s;
-}
 /* ==================================================== */
 
 .SignIn{
@@ -92,8 +133,15 @@
     color: #F0F0F0;
     border-radius: 2rem;
     padding: 1rem;
-    transition: opacity 0.6s ease-in-out ;
-
+    
+    
+}
+.SignIn.No{
+    
+    animation: FadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
 }
 .SignIn h1{
     text-align: center;
@@ -145,8 +193,4 @@
 .haveAccount span:hover{
     cursor: pointer;
     text-decoration: underline;
-}
-.SignIn.No{
-    display: none;
-    transition: 0.6s ease-in-out 1s;
 }
